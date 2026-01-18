@@ -1,0 +1,217 @@
+body{
+    background-color: #050505;
+    overflow: hidden;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base style for the large menu items */
+.navcontrol div[class^="slot"] {
+    position: absolute;
+    width: 15vw; 
+    height: 15vw;
+
+    background-color: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    
+    left: 50%;
+    bottom: 1vw; /* Positioned relative to the central logo */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9vw;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+    /* Smooth transitions for all properties */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    z-index: 5;
+
+    background-size: cover;      /* Forces image to fill the circle */
+    background-position: center;  /* Centers the image subject */
+    background-repeat: no-repeat;
+    
+    /* ADD THIS: If the image is missing, show a color so you know the div exists */
+    background-color: #333;
+}
+
+.oneuslogo{
+    background-image: url("./images for testing/logo1.png");
+    height: 500px;
+    width: 500px;
+    border-radius: 25rem 25rem 25rem 25rem;
+   
+    position: fixed; 
+    
+    /* 2. Push it to the bottom */
+    bottom: 0px; 
+    
+    /* 3. The "Perfect Center" Trick */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* background-color: gray; Placeholder */
+    background-size: cover;
+    background-position:bottom;
+    
+    background-color: #333;
+    box-shadow: 0 -20px 100px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 20; /* Ensure logo is on top */
+}
+
+.navcontrol div[class^="slot"]:hover {
+    /* Instead of turning white, we just make it slightly brighter */
+    background-color: rgba(255, 255, 255, 0.2); 
+    
+    /* Keep the glow effect on the outside */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
+    
+    /* Keep the pop-out effect */
+    scale: 1.1; 
+    
+    /* Optional: brighten the image itself on hover */
+    filter: brightness(1.2);
+    
+    /* Ensures the circle stays above others when hovered */
+    z-index: 100;
+}
+
+/* .navcontrol div[class^="slot"]:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* color: black; */
+    /* box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
+    scale: 1.05; /* Pop out effect */
+    /* filter: brightness(1.2);
+    
+    /* Ensures the circle stays above others when hovered */
+    /* z-index: 100;
+
+} */
+
+/* .slot-2 { 
+    transform: translate(-800px, -20px); 
+    background-image: url(".oneuslogo");
+  
+}  /* Far Left 
+.slot-1 { transform: translate(-500px, -330px); } /* Mid Left 
+.slot0  { transform: translate(-80px, -220px); }  /* Top Left 
+.slot1  { transform: translate(20px, -220px); }   /* Top Right 
+.slot2  { transform: translate(150px, -150px); }  /* Mid Right 
+.slot3  { transform: translate(220px, -40px); }   /* Far Right 
+
+.navcontrol [class^="slot"] {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%; /* Makes them circles 
+    bottom: 20px; /* Base distance from bottom 
+    left: 50%;
+    z-index: 10;
+}
+ */
+
+ /* Container for the navigation */
+.navcontrol {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Common style for all large circles
+.navcontrol div[class^="slot"] {
+    position: absolute;
+    /* Adjust this value to make them even bigger 
+    width: 15vw; 
+    height: 15vw;
+    background-color: white;
+    border-radius: 50%;
+    
+    /* Anchors the rotation point to the center of your bottom logo 
+    left: 50%;
+    bottom: 1vw; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    
+    /* This ensures circles don't tilt their content 
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+} */
+
+/* MEASUREMENTS:
+   We use a 'TranslateY' of -60vh to push them far up the page.
+   The rotation angles (-75 to 75) spread them across the 180-degree arc.
+*/
+
+.slot-2{ 
+    transform: translate(-80%, 50%) rotate(-75deg) translateY(-60vh) rotate(75deg); 
+    background-image: url("./images for testing/lastsong.jpg");
+}
+
+.slot-1{ 
+    transform: translate(-60%, 50%) rotate(-45deg) translateY(-65vh) rotate(45deg); 
+    
+
+}
+.slot0{ 
+    transform: translate(-50%, 50%) rotate(-15deg) translateY(-70vh) rotate(15deg); 
+    background-image: url("./images for testing/LightUs.jpg");
+}
+.slot1{ 
+    transform: translate(-50%, 50%) rotate(15deg)  translateY(-70vh) rotate(-15deg); 
+    background-image: url("./images for testing/RaiseUs.jpg");
+}
+.slot2{ 
+    transform: translate(-40%, 50%) rotate(45deg)  translateY(-65vh) rotate(-45deg); 
+    background-image: url("./images for testing/FlyWithUs.png");
+}
+.slot3{ 
+    transform: translate(-25%, 50%) rotate(75deg)  translateY(-60vh) rotate(-75deg); 
+    background-image: url("./images for testing/aswe.jpg");
+}
+
+/* Container inside the circle to stack items */
+.slot-content {
+    display: flex;
+    flex-direction: column; /* Stacks Icon over Text */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Style for the song icon */
+.song-icon {
+    width: 40px;  /* Adjust size based on your circle size */
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Makes icon glow */
+    transition: transform 0.3s ease;
+}
+
+/* Ensure text remains clear */
+/* .song-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+} */
+
+/* Animation: Icon tilts slightly when you hover over the circle */
+div[class^="slot"]:hover .song-icon {
+    transform: rotate(15deg) scale(1.2);
+}
